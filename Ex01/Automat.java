@@ -59,7 +59,6 @@ public class Automat {
             System.out.println("[1] Показать товар из категории");
             System.out.println("[2] Поиск товара по названию");
             System.out.println("[3] Добавить продукт в корзину по ID");                 //Меню для заполнения списка товаров и оформления покупки
-            // System.out.println("[4] Убрать продукт в корзину по ID");
             System.out.println("[9] Покинуть покупки");
             System.out.println("[0]Перейти к оплате");
             System.out.print("Выберете команду: ");
@@ -143,7 +142,7 @@ public class Automat {
                     }
                 }
             }
-            
+
             if (idCommand == 0) {                                                           // Проведение оплаты
                 System.out.print("Введите сумму для оплаты: ");
                 int summa = scan.nextInt();
