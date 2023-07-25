@@ -1,3 +1,5 @@
+package Ex01;
+
 import java.util.Calendar;
 
 public class HotBeverage extends Beverage {

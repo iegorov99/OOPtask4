@@ -1,6 +1,10 @@
+package Ex01;
+
 import java.util.ArrayList;
 import java.util.GregorianCalendar;
 import java.util.List;
+
+import Ex02.Human;
 
 public class Program {
     public static void main(String[] args) {
@@ -19,9 +23,9 @@ public class Program {
 
         list.initProducts(myList);
 
-        String name = "Twix";
+        // String name = "Twix";
 
-        System.out.println(list.getProduct(name).toString());
+        // System.out.println(list.getProduct(name).toString());
 
         HotBeverage product4 = new HotBeverage("Latte", 90, 50, new GregorianCalendar(2023, 3, 19, 0, 0), 
         0.25, 32);
@@ -38,22 +42,37 @@ public class Program {
         
         HotBeverageAutomat list2 = new HotBeverageAutomat();
 
-        List<HotBeverage> myList2 = new ArrayList<>();
+        
 
-        myList2.add(product4);
-        myList2.add(product5);
-        myList2.add(product6);
-        myList2.add(product7);
-        myList2.add(product8);
-        myList2.add(product9);
+        myList.add(product4);
+        myList.add(product5);
+        myList.add(product6);
+        myList.add(product7);
+        myList.add(product8);
+        myList.add(product9);
 
-        list2.initHotBeverage(myList2);
+        list2.initProducts(myList);
 
-        String name1 = "Latte2";
-        double weight = 0.45;
-        int temerature = 34;
+        // String name1 = "Latte2";
+        // double weight = 0.45;
+        // int temerature = 34;
 
-        System.out.println(list2.getProduct(name1, weight, temerature).toString());
+        // System.out.println(list2.getProduct(name1, weight, temerature).toString());
+
+
+        Human man1 = new Human("Artur", false, false, 1023, list2);
+
+        ArrayList<String> list3 = new ArrayList<>();
+
+        for (Product product : myList) {
+            list3.add(product.getName());
+        }
+
+
+        man1.makeOrder(list3);
+
+        
+
         
     }
 }
