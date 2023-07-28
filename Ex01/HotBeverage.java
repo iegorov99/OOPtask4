@@ -23,7 +23,14 @@ public class HotBeverage extends Beverage {
     public String toString(){
         return "Product [name= " + getName() + ", price= " + getPrice() + ", quantity= " + getQuantity() + ", bestBefore= " 
         + getBestBefore().get(Calendar.YEAR) + "/" + getBestBefore().get(Calendar.MONTH) + "/" + getBestBefore().get(Calendar.DAY_OF_MONTH) + ", volume= " + getVolume() + 
-        ", temperature= " + temerature + "]";
+        ", temperature= " + temerature + "]" + "\n";
     }
+
     
+    public int compareTo(HotBeverage o) {
+        int result;
+        result = (this.getTemerature()- o.getTemerature());
+        return result;
+    }
+
 }

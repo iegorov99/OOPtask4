@@ -1,6 +1,7 @@
 package Ex01;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
@@ -74,32 +75,45 @@ public class Automat {
                 System.out.print("Выберете команду: ");
                 id_category = scan.nextInt();
                 scan.nextLine();
+                
                 if (id_category==1){
+                    List<Food> newList = new ArrayList<>();
                     for (Product el : shoppingList) {                                        
-                        if (el instanceof Food ){                                           
+                        if (el instanceof Food ){    
+                                                                
                             if (el.getQuantity()>0){
-                                System.out.print(el);                                       
+                                newList.add((Food) el);                                        
                             }
                         }
-                    }    
+                    }
+                    // newList.sort(new FoodComparator());
+                    Collections.sort(newList);
+                    System.out.println(newList);
                 }        
-                if (id_category== 2){                                                       
+                if (id_category== 2){  
+                    List<Beverage> newList = new ArrayList<>();                                                     
                     for (Product el : shoppingList) {                                       
                         if (el instanceof Beverage ){
                             if (el.getQuantity()>0){
-                                System.out.print(el);
+                                newList.add((Beverage) el); 
                             }
                         }
                     }
+                    // newList.sort(new BeverageComparator());
+                    Collections.sort(newList);
+                    System.out.println(newList);
                 }
-                if (id_category == 3){                                                      
+                if (id_category == 3){
+                    List<HotBeverage> newList = new ArrayList<>();                                                      
                     for (Product el : shoppingList) {                                       
                         if (el instanceof HotBeverage ){
                             if (el.getQuantity()>0){
-                                System.out.print(el);
+                                newList.add((HotBeverage) el);
                             }
                         }
                     }
+                    newList.sort(new HBeverageComparator());
+                    System.out.println(newList);
                 }
             }
             
@@ -138,6 +152,9 @@ public class Automat {
                         if (quantity>count) {
                             System.out.println("Вы запросили кол-ва большее чем в автомате");
                         }
+
+
+
                     break;                                                                  // После нахождения товара останавливает последующий поиск
                     }
                 }

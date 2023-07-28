@@ -2,7 +2,8 @@ package Ex01;
 
 import java.util.Calendar;
 
-public class Food extends Product{
+
+public class Food extends Product implements Comparable<Food>{
     private double weight;
 
     public Food (String name, int price, int quantity, Calendar bestBefore, double weight) {
@@ -21,7 +22,18 @@ public class Food extends Product{
     @Override
     public String toString(){
         return "Product [name= " + getName() + ", price= " + getPrice() + ", quantity= " + getQuantity() + ", bestBefore= " 
-        + getBestBefore().get(Calendar.YEAR) + "/" + getBestBefore().get(Calendar.MONTH) + "/" + getBestBefore().get(Calendar.DAY_OF_MONTH) + ", weight= " + weight + "]";
+        + getBestBefore().get(Calendar.YEAR) + "/" + getBestBefore().get(Calendar.MONTH) + "/" + getBestBefore().get(Calendar.DAY_OF_MONTH) + ", weight= " + weight + "]" + "\n";
+    }
+
+    // @Override
+    // public int compareTo(Food o) {
+    //     return (int)(this.getWeight() - o.getWeight());
+    // }
+    @Override
+    public int compareTo(Food o) {
+        int result;
+        result = Double.compare(this.getWeight(), o.getWeight());
+        return result;
     }
 
 }
