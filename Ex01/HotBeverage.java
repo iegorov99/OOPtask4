@@ -11,7 +11,7 @@ public class HotBeverage extends Beverage {
     }
 
 
-    public int getTemerature() {
+    public int getTemperature() {
         return temerature;
     }
 
@@ -27,10 +27,10 @@ public class HotBeverage extends Beverage {
     }
 
     
-    public int compareTo(HotBeverage o) {
-        int result;
-        result = (this.getTemerature()- o.getTemerature());
-        return result;
-    }
+    // public int compareTo(HotBeverage o) {
+    //     int result;
+    //     result = (this.getTemerature()- o.getTemerature());
+    //     return result;
+    // }
 
 }

@@ -3,7 +3,7 @@ package Ex01;
 import java.util.Calendar;
 
 
-public class Food extends Product implements Comparable<Food>{
+public class Food extends Product{
     private double weight;
 
     public Food (String name, int price, int quantity, Calendar bestBefore, double weight) {
@@ -29,7 +29,8 @@ public class Food extends Product implements Comparable<Food>{
     // public int compareTo(Food o) {
     //     return (int)(this.getWeight() - o.getWeight());
     // }
-    @Override
+
+    
     public int compareTo(Food o) {
         int result;
         result = Double.compare(this.getWeight(), o.getWeight());

@@ -1,10 +1,13 @@
 package Ex01;
 
 import java.util.ArrayList;
+
+import java.util.Collections;
 import java.util.GregorianCalendar;
 import java.util.List;
 
 import Ex02.Human;
+
 
 public class Program {
     public static void main(String[] args) {
@@ -36,9 +39,6 @@ public class Program {
 
         list.initProducts(myList);
 
-        // String name = "Twix";
-
-        // System.out.println(list.getProduct(name).toString());
 
         HotBeverage product10 = new HotBeverage("Latte", 90, 50, new GregorianCalendar(2023, 3, 19, 0, 0), 
         0.25, 32);
@@ -66,23 +66,46 @@ public class Program {
 
         list2.initProducts(myList);
 
-        // String name1 = "Latte2";
-        // double weight = 0.45;
-        // int temerature = 34;
 
-        // System.out.println(list2.getProduct(name1, weight, temerature).toString());
+        Human man1 = new Human("Artur", false, false, 1023);
 
-
-        Human man1 = new Human("Artur", false, false, 1023, list2);
+        man1.findNearestAutomat(list2);
 
         ArrayList<String> list3 = new ArrayList<>();
 
+        list3.add("Latte2");
+        list3.add("Cheetos");
+        list3.add("Cola");
+
+        man1.validateOrder(list3);
+
+        System.out.println(man1.makeOrder(list3, man1.getNearAutomat(), man1));
+
+        Collections.sort(myList);
+        // System.out.println(myList);                               //сортировка по названию
+
+        List<Product> foodList = new ArrayList<>();
+        List<Product> beverageList = new ArrayList<>();
+        List<Product> hotList = new ArrayList<>();
+
         for (Product product : myList) {
-            list3.add(product.getName());
+            
+            if (product instanceof Food) foodList.add(product);
+            else if (product instanceof HotBeverage) {
+            hotList.add(product);
+            beverageList.add(product);
+            } else if(product instanceof Beverage) beverageList.add(product);
         }
 
+        foodList.sort(new FoodComparator());
+        // System.out.println(foodList);                           //сортировка по весу
 
-        man1.makeOrder(list3);
+        hotList.sort(new HBeverageComparator());
+        // System.out.println(hotList);                            //сортировака по температуре
+
+        beverageList.sort(new BeverageComparator());
+        System.out.println(beverageList);                         //сортировка по объёму
+;
 
         
 

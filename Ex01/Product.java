@@ -7,9 +7,8 @@ import java.util.GregorianCalendar;
 // Реализуйте класс Товар, содержащий данные о товаре, и ТорговыйАвтомат, содержащий в себе методы
 // initProducts (List <Product>) сохраняющий в себе список исходных продуктов и getProduct(String name)
 
-public abstract class Product {
+public abstract class Product implements Comparable<Product> {
     
-    private int id = 0;
     private String name;
     private int price;
     private int quantity;
@@ -21,10 +20,6 @@ public abstract class Product {
         this.price = price;
         this.quantity = quantity;
         this.bestBefore = bestBefore;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public String getName() {
@@ -63,8 +58,17 @@ public abstract class Product {
 
     @Override
     public String toString(){
-        return "Product [id = " + id + "name= " + name + ", price= " + price + ", quantity= " + quantity + ", bestBefore= " 
+        return "Product [name= " + name + ", price= " + price + ", quantity= " + quantity + ", bestBefore= " 
         + bestBefore.get(Calendar.YEAR) + "/" + bestBefore.get(Calendar.MONTH) + "/" + bestBefore.get(Calendar.DAY_OF_MONTH)  + "]" + "\n";
+    }
+
+    @Override
+    public int compareTo(Product o) {
+      int resultOfComparing = this.getName().compareTo(o.getName());
+      if (resultOfComparing == 0) {
+        resultOfComparing = this.getName().compareTo(o.getName());
+      }
+      return resultOfComparing;
     }
 
 }
