@@ -1,6 +1,7 @@
 package Ex02;
 
-public abstract class Actor implements ActorBehaviour {
+public abstract class Actor implements ActorBehaviour {     // Принцип единственной ответственности, Принцип
+                                                            // открытости/закрытости
     protected String name;
     protected boolean MakeOrder;
     protected boolean TakeOrder;

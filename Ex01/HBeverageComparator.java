@@ -2,7 +2,8 @@ package Ex01;
 
 import java.util.Comparator;
 
-public class HBeverageComparator implements Comparator<Product> {
+public class HBeverageComparator implements Comparator<Product> {   // Принцип единственной ответственности,
+                                                                    // Принцип Разделения интерфейса
 
    @Override
   public int compare(Product o1, Product o2) {

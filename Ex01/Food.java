@@ -3,7 +3,7 @@ package Ex01;
 import java.util.Calendar;
 
 
-public class Food extends Product{
+public class Food extends Product{      // Принцип единственной ответственностиб Принцип открытости/закрытости
     private double weight;
 
     public Food (String name, int price, int quantity, Calendar bestBefore, double weight) {

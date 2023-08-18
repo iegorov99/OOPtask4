@@ -6,7 +6,7 @@ import java.util.List;
 
 import Ex01.Product;
 
-public class Order<T extends Product> {
+public class Order<T extends Product> {     // Принцип единственной ответственности, Принцип открытости/закрытости
 
     private List <T> list;
     private int price;

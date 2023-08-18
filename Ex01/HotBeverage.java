@@ -2,7 +2,7 @@ package Ex01;
 
 import java.util.Calendar;
 
-public class HotBeverage extends Beverage {
+public class HotBeverage extends Beverage {     // Принцип единственной ответственности, Принцип открытости/закрытости
     private int temerature;
 
     public HotBeverage(String name, int price, int quantity, Calendar bestBefore, double volume, int temerature){

@@ -8,7 +8,7 @@ import java.util.List;
 import Ex02.Human;
 import Ex02.Order;
 
-public class Automat {
+public class Automat {    // Принцип открытости/закрытости 
     
     protected List<Product> listProduct = new ArrayList<>();
 

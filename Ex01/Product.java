@@ -7,7 +7,8 @@ import java.util.GregorianCalendar;
 // Реализуйте класс Товар, содержащий данные о товаре, и ТорговыйАвтомат, содержащий в себе методы
 // initProducts (List <Product>) сохраняющий в себе список исходных продуктов и getProduct(String name)
 
-public abstract class Product implements Comparable<Product> {
+public abstract class Product implements Comparable<Product> {      // Принцип единственной ответственности, Принцип
+                                                                    // открытости/закрытости
     
     private String name;
     private int price;

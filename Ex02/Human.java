@@ -8,7 +8,7 @@ import java.util.Map;
 import Ex01.Automat;
 import Ex01.Product;
 
-public class Human extends Actor{
+public class Human extends Actor{       // Принцип единственной ответственности, Принцип открытости/закрытости
 
     private int money;
     private Automat nearestAutomat;

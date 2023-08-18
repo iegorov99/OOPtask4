@@ -2,7 +2,7 @@ package Ex01;
 
 import java.util.List;
 
-public class AutomatInterface implements Service<Automat, Product>{
+public class AutomatInterface implements Service<Automat, Product>{   // Принцип Разделения интерфейса
 
     @Override
     public Automat restock(Automat automat, Product product) {

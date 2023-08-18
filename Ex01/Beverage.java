@@ -2,7 +2,7 @@ package Ex01;
 
 import java.util.Calendar;
 
-public class Beverage extends Product {
+public class Beverage extends Product {     // Принцип единственной ответственности, Принцип открытости/закрытости
     private double volume;
 
     public Beverage(String name, int price, int quantity, Calendar bestBefore, double volume){

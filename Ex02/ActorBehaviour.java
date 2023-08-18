@@ -7,7 +7,7 @@ import java.util.List;
 import Ex01.Automat;
 
 
-public interface ActorBehaviour {
+public interface ActorBehaviour {   // Принцип Разделения интерфейса
     void setIsMakeOrder(boolean b);
     void setIsTakeOrder(boolean d);
     boolean isMakeOrder();

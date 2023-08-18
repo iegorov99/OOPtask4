@@ -1,6 +1,6 @@
 package Ex01;
 
-public class HotBeverageAutomat extends Automat {
+public class HotBeverageAutomat extends Automat {       // Принцип единственной ответственности, Принцип открытости/закрытости
 
     public Product getProduct(String name, double volume, int temerature) {
         for (Product product : listProduct) {
